@@ -1,60 +1,207 @@
-nav{
+@mixin textStyle {
+    font-family: "Noto Sans SC", sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+nav {
     width: 100%;
     height: 40px;
     padding: 0px 10px;
     background-color: #e8e8e8;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 
-    .navImg{
-        height: 100%;
+    @media only screen and (min-width: 600px) {
+        button {
+            display: none;
+        }
 
-        img{
+        .navImgR {
+            display: none;
+        }
+
+        .navImg {
             height: 100%;
-            padding: 7px 8px 9px 8px;
+
+            img {
+                height: 100%;
+                padding: 7px 8px 9px 8px;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 15px;
+            display: flex;
+            gap: 20px;
+
+            div {
+                display: none;
+            }
+
+            li {
+                a {
+                    @include textStyle;
+                    letter-spacing: 0.5px;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+
+                    svg {
+                        display: none;
+                    }
+                }
+
+                a::before {
+                    content: "";
+                    position: absolute;
+                    top: calc(100% + 2px);
+                    width: 0px;
+                    height: 2px;
+                    background-color: #0478ab;
+                    opacity: 0;
+                    transition: opacity 0.3s, width 0.3s;
+                }
+
+                a:hover::before {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
         }
     }
 
-    ul{
-        list-style: none;
-        padding-left: 15px;
-        display: flex;
-        gap: 20px;
+    @media only screen and (max-width: 600px) {
+        .navImg {
+            display: none;
+        }
 
-        li{
-            a{
-                text-decoration: none;
-                font-family: "Noto Sans SC", sans-serif;
-                letter-spacing: 0.5px;
-                font-weight: 500;
-                font-size: 0.9rem;
-                color: #000;
-                display: flex;
-                justify-content: center;
-                position: relative;
+        .navImgR {
+            height: 100%;
+
+            img {
+                height: 100%;
+                padding: 5px;
             }
-            a::before{
-                content: "";
+        }
+
+        ul {
+            background-color: #e8e8e8;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            opacity: 0;
+            width: 100%;
+            height: 0px;
+            padding: 30px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow: hidden;
+            transition: opacity 0.2s, height 0.2s;
+
+            li {
+                a {
+                    @include textStyle;
+                    font-weight: 300;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    svg {
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
+            }
+
+            div {
                 position: absolute;
-                top: calc(100% + 2px);
-                width: 0px;
-                height: 2px;
-                background-color: #000;
-                opacity: 0;
-                transition: opacity 0.3s, width 0.3s;
+                top: calc(100% - 150px);
+                left: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                h3 {
+                    @include textStyle;
+                    font-size: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-weight: bold;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        font-size: 18px;
+                        font-weight: 500;
+
+                        svg {
+                            position: absolute;
+                            left: 100%;
+                            top: calc(50% - 8px);
+                            margin-left: 10px;
+                            height: 20px;
+                            width: 20px;
+                            filter: drop-shadow(0px 0px 1px #000);
+                        }
+                    }
+                }
+
+                div {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    padding-top: 15px;
+                    margin-left: -40px;
+                    gap: 10px;
+
+                    a {
+                        @include textStyle;
+                        font-weight: 500;
+                        font-size: 13px;
+                        background-color: #5eb4da;
+                        border: 1px solid #24566b;
+                        border-radius: 15px;
+                        padding: 5px 8px;
+                    }
+                }
             }
-            a:hover::before{
+        }
+
+        button {
+            position: absolute;
+            top: 0px;
+            left: calc(100% - 60px);
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+            svg {
+                height: 100%;
                 width: 100%;
-                opacity: 1;
             }
         }
     }
 }
 
-body{
+body {
     background-color: #f6f6f6;
 }
 
 
-//#0478ab   claro 
-//#24566b   oscuro
+//#f6f6f6   blanco claro
+//#e8e8e8   blanco oscuro
+//#000      negro 
+//#0478ab   claro (azul)
+//#24566b   oscuro (azul)
