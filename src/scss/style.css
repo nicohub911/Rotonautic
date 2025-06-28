@@ -41,21 +41,52 @@ header span {
 main .company {
   width: 100%;
   margin-top: 50px;
-  padding: 100px;
+  padding: 0px 10px 100px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
 }
-main .company h3 {
-  font-family: "Rock Salt", cursive;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: #000;
-  position: relative;
-  display: flex;
-  justify-content: center;
+@media only screen and (min-width: 550px) {
+  main .company h3 {
+    font-family: "Rock Salt", cursive;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  main .company p {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    font-family: "Noto Sans SC", sans-serif;
+    color: #000;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  main .company h3 {
+    font-family: "Rock Salt", cursive;
+    font-weight: 500;
+    font-size: calc(0.5rem + 1.5vw);
+    color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  main .company p {
+    width: 100%;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: "Noto Sans SC", sans-serif;
+    color: #000;
+    font-weight: 300;
+    font-size: 1rem;
+  }
 }
 main .company h3::before {
   content: "";
@@ -73,14 +104,6 @@ main .company h3::after {
   height: 2px;
   border-radius: 50%;
   background-color: #0478ab;
-}
-main .company p {
-  width: 80%;
-  text-align: center;
-  font-family: "Noto Sans SC", sans-serif;
-  color: #000;
-  font-weight: 300;
-  font-size: 1rem;
 }
 main .products {
   padding: 50px 0px;
@@ -112,15 +135,47 @@ main .products span div .products_card {
   flex-direction: column;
 }
 main .products span div .products_card div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: calc(100px + 10vw);
   min-width: 150px;
   max-width: 300px;
   aspect-ratio: 11/10;
   box-shadow: 0px 0px 1px #fff;
-  background-image: url(../../img/home/strobelNash.webp);
   background-size: cover;
   background-position: center;
   border-radius: 2px;
+}
+main .products span div .products_card div a {
+  position: absolute;
+  bottom: 15%;
+  background-color: #e8e8e8;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #0a0a0a;
+  border-radius: 20px;
+  padding: 8px 12px;
+  filter: drop-shadow(0px 0px 2px #000);
+}
+main .products span div .products_card div a:hover::before {
+  opacity: 1;
+}
+main .products span div .products_card div a::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border: 2px solid #e8e8e8;
+  border-radius: 20px;
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.1s;
 }
 main .products span div .products_card span {
   font-family: "Noto Sans SC", sans-serif;
@@ -128,11 +183,65 @@ main .products span div .products_card span {
   font-weight: 800;
   color: #e8e8e8;
 }
+main .products span div .card1 {
+  background-image: url(../../img/home/nash.webp);
+}
+main .products span div .card2 {
+  background-image: url(../../img/home/supernash.webp);
+}
+main .products span div .card3 {
+  background-image: url(../../img/home/arrow.webp);
+}
+main .products span div .card4 {
+  background-image: url(../../img/home/max.webp);
+}
+main .maps {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .maps div {
+  width: 80%;
+  height: 80%;
+  background-color: #e8e8e8;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 body {
   background-color: #f6f6f6;
 }
 
+@media only screen and (min-width: 600px) {
+  .whatsappFloating {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .whatsappFloating {
+    position: fixed;
+    top: calc(100% - 50px);
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 5px #6b6b6b;
+    background-color: #3cee45;
+    border-radius: 5px;
+    padding: 4px;
+    z-index: 70000;
+  }
+  .whatsappFloating svg {
+    width: 100%;
+    height: 100%;
+  }
+  .whatsappFloating:hover {
+    background-color: #5bff63;
+  }
+}
 nav {
   width: 100%;
   height: 40px;

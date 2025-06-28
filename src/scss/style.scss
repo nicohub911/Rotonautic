@@ -10,6 +10,36 @@ body {
     background-color: #f6f6f6;
 }
 
+@media only screen and (min-width: 600px) {
+    .whatsappFloating {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .whatsappFloating {
+        position: fixed;
+        top: calc(100% - 50px);
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        box-shadow: 0px 0px 5px #6b6b6b;
+        background-color: #3cee45;
+        border-radius: 5px;
+        padding: 4px;
+        z-index: 70000;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .whatsappFloating:hover {
+        background-color: #5bff63;
+    }
+}
+
 nav {
     width: 100%;
     height: 40px;
