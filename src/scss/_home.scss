@@ -1,4 +1,4 @@
-header {
+.header_inicio {
     width: 100%;
     height: 500px;
     background-image: url(../../img/home/bannerBK.webp);
@@ -17,7 +17,7 @@ header {
     img {
         width: 25vw;
         filter: drop-shadow(0px 0px 5px #fff);
-        animation: presentation 4s ease-in-out 1;
+        animation: presentation 5.5s ease-in-out 1;
     }
 
     span {
@@ -25,7 +25,7 @@ header {
         font-size: 20px;
         font-weight: 600;
         color: #000;
-        animation: presentation 4s ease-in-out 1;
+        animation: presentation 5.5s ease-in-out 1;
     }
 
     @keyframes presentation {
@@ -42,6 +42,7 @@ header {
 main {
     .company {
         width: 100%;
+        min-height: 500px;
         margin-top: 50px;
         padding: 0px 10px 100px 10px;
         display: flex;
@@ -50,7 +51,7 @@ main {
         flex-direction: column;
         gap: 50px;
 
-        @media only screen and (min-width: 550px){
+        @media only screen and (min-width: 550px) {
             h3 {
                 font-family: "Rock Salt", cursive;
                 font-weight: 500;
@@ -60,7 +61,7 @@ main {
                 display: flex;
                 justify-content: center;
             }
-            
+
             p {
                 width: 80%;
                 max-width: 800px;
@@ -71,7 +72,8 @@ main {
                 font-size: 1rem;
             }
         }
-        @media only screen and (max-width: 550px){
+
+        @media only screen and (max-width: 550px) {
             h3 {
                 font-family: "Rock Salt", cursive;
                 font-weight: 500;
@@ -118,6 +120,10 @@ main {
     .products {
         padding: 50px 0px;
         background-color: #0a0a0a;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 500px;
 
         h3 {
             font-family: "Noto Sans SC", sans-serif;
@@ -159,7 +165,7 @@ main {
                         background-position: center;
                         border-radius: 2px;
 
-                        a{
+                        a {
                             position: absolute;
                             bottom: 15%;
                             background-color: #e8e8e8;
@@ -172,10 +178,12 @@ main {
                             padding: 8px 12px;
                             filter: drop-shadow(0px 0px 2px #000);
                         }
-                        a:hover::before{
+
+                        a:hover::before {
                             opacity: 1;
                         }
-                        a::before{
+
+                        a::before {
                             content: "";
                             position: absolute;
                             top: -4px;
@@ -189,36 +197,42 @@ main {
                             transition: opacity 0.1s;
                         }
                     }
-                    span{
+
+                    span {
                         font-family: "Noto Sans SC", sans-serif;
                         font-size: 1rem;
                         font-weight: 800;
                         color: #e8e8e8;
                     }
                 }
-                .card1{
+
+                .card1 {
                     background-image: url(../../img/home/nash.webp);
                 }
-                .card2{
+
+                .card2 {
                     background-image: url(../../img/home/supernash.webp);
                 }
-                .card3{
+
+                .card3 {
                     background-image: url(../../img/home/arrow.webp);
                 }
-                .card4{
+
+                .card4 {
                     background-image: url(../../img/home/max.webp);
                 }
             }
         }
     }
 
-    .maps{
+    .maps {
         width: 100%;
         height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
-        div{
+
+        div {
             width: 80%;
             height: 80%;
             background-color: #e8e8e8;

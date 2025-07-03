@@ -1,4 +1,4 @@
-header {
+.header_inicio {
   width: 100%;
   height: 500px;
   background-image: url(../../img/home/bannerBK.webp);
@@ -17,17 +17,17 @@ header {
   flex-direction: column;
   gap: 20px;
 }
-header img {
+.header_inicio img {
   width: 25vw;
   filter: drop-shadow(0px 0px 5px #fff);
-  animation: presentation 4s ease-in-out 1;
+  animation: presentation 5.5s ease-in-out 1;
 }
-header span {
+.header_inicio span {
   font-family: "Noto Sans SC", sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: #000;
-  animation: presentation 4s ease-in-out 1;
+  animation: presentation 5.5s ease-in-out 1;
 }
 @keyframes presentation {
   0% {
@@ -40,6 +40,7 @@ header span {
 
 main .company {
   width: 100%;
+  min-height: 500px;
   margin-top: 50px;
   padding: 0px 10px 100px 10px;
   display: flex;
@@ -108,6 +109,10 @@ main .company h3::after {
 main .products {
   padding: 50px 0px;
   background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 500px;
 }
 main .products h3 {
   font-family: "Noto Sans SC", sans-serif;
@@ -210,6 +215,259 @@ main .maps div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (min-width: 1100px) {
+  .productBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.productHeader {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 40px;
+  padding: 50px calc(10px + 5vw);
+  gap: 20px;
+}
+@media only screen and (min-width: 1100px) {
+  .productHeader {
+    width: 1100px;
+  }
+}
+.productHeader h4 {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-weight: 300;
+  font-size: calc(1rem + 2vw);
+  text-align: start;
+  width: 100%;
+}
+.productHeader h4 span {
+  font-weight: bold;
+}
+.productHeader p {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-weight: 300;
+  font-size: 1rem;
+  max-width: 700px;
+}
+.productHeader .aclarationSpan {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-bottom: -15px;
+}
+.productHeader div {
+  display: flex;
+  gap: 10px;
+}
+.productHeader div a {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+.productHeader div .productML {
+  color: #f6f6f6;
+  background-color: #0478ab;
+  transition: background 0.1s;
+}
+.productHeader div .productML:hover {
+  background-color: #24566b;
+}
+.productHeader div .productWP {
+  color: #0478ab;
+  border: 2px solid #0478ab;
+  transition: border 0.1s;
+}
+.productHeader div .productWP:hover {
+  border-color: #24566b;
+  color: #24566b;
+}
+
+.gallery {
+  max-width: 1100px;
+  padding: 0px calc(10px + 5vw);
+  margin-bottom: 100px;
+}
+@media only screen and (min-width: 1100px) {
+  .gallery {
+    width: 1100px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .gallery {
+    width: 100%;
+  }
+}
+.gallery .sliderContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  background-color: #e8e8e8;
+}
+.gallery .sliderContainer button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  position: absolute;
+  background-color: transparent;
+  filter: drop-shadow(0px 0px 1px #000);
+  cursor: pointer;
+  z-index: 1000;
+}
+.gallery .sliderContainer button svg {
+  height: 100%;
+  width: 100%;
+}
+.gallery .sliderContainer #product_leftBtn {
+  left: 10px;
+  top: calc(50% - 25px);
+}
+.gallery .sliderContainer #product_rightBtn {
+  left: calc(100% - 60px);
+  top: calc(50% - 25px);
+}
+.gallery .sliderContainer .sliderRail {
+  display: flex;
+  width: 800%;
+  transition: transform 0.3s;
+  z-index: 500;
+}
+.gallery .sliderContainer .sliderRail div {
+  width: 12.5%;
+  aspect-ratio: 15/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery .sliderContainer .sliderRail div iframe {
+  width: 100%;
+  height: 100%;
+}
+.gallery .sliderContainer .sliderRail div img {
+  width: 100%;
+  height: 100%;
+}
+.gallery .sliderContainer .sliderPages {
+  width: 100%;
+  height: 0px;
+  filter: drop-shadow(0px 0px 1px #000);
+  position: absolute;
+  top: calc(100% - 20px);
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.gallery .sliderContainer .sliderPages span {
+  width: 15px;
+  height: 10px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  transition: background 0.2s;
+}
+.gallery .sliderContainer .sliderPages span:first-child {
+  background-color: rgba(246, 246, 246, 0.9);
+}
+
+.productDescription {
+  padding: 50px calc(10px + 5vw);
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1100px) {
+  .productDescription {
+    width: 1100px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .productDescription {
+    width: 100%;
+  }
+}
+.productDescription h5 {
+  width: 100%;
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  position: relative;
+}
+.productDescription h5::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #0478ab;
+}
+.productDescription .h5Left {
+  text-align: start;
+}
+.productDescription .h5Right {
+  text-align: end;
+}
+.productDescription div {
+  display: flex;
+  align-items: center;
+}
+.productDescription div p {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.productDescription div .pLeft {
+  text-align: start;
+}
+.productDescription div .pRight {
+  text-align: end;
+}
+.productDescription div .pCenter {
+  text-align: center;
+}
+.productDescription div ul {
+  list-style: square;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 15px;
+}
+.productDescription div ul li {
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 300;
+}
+@media only screen and (max-width: 750px) {
+  .productDescription div img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .productDescription div img {
+    height: 100%;
+  }
 }
 
 body {
@@ -454,28 +712,31 @@ nav {
     left: calc(100% - 60px);
     width: 40px;
     height: 40px;
+    border: none;
+    outline: none;
     cursor: pointer;
+    background-color: transparent;
   }
   nav button svg {
-    height: 100%;
-    width: 100%;
+    width: 40px;
+    height: 40px;
   }
 }
 
 footer {
-  height: 140px;
   width: 100%;
+  min-height: 140px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   background-color: #e8e8e8;
-  padding: 0px 10vw;
+  margin-top: 50px;
+  padding: 20px 5vw;
   gap: 30px;
 }
 footer div {
-  padding-top: 20px;
-  height: 100%;
   width: 120px;
+  margin-top: 20px;
 }
 footer div img {
   width: 100%;

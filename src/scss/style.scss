@@ -1,4 +1,5 @@
 @import "_home.scss";
+@import "_productStyle.scss";
 
 @mixin textStyle {
     font-family: "Noto Sans SC", sans-serif;
@@ -279,30 +280,33 @@ nav {
             left: calc(100% - 60px);
             width: 40px;
             height: 40px;
+            border: none;
+            outline: none;
             cursor: pointer;
+            background-color: transparent;
 
             svg {
-                height: 100%;
-                width: 100%;
+                width: 40px;
+                height: 40px;
             }
         }
     }
 }
 
 footer {
-    height: 140px;
     width: 100%;
+    min-height: 140px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     background-color: #e8e8e8;
-    padding: 0px 10vw;
+    margin-top: 50px;
+    padding: 20px 5vw;
     gap: 30px;
 
     div {
-        padding-top: 20px;
-        height: 100%;
         width: 120px;
+        margin-top: 20px;
 
         img {
             width: 100%;
@@ -331,10 +335,3 @@ footer {
         }
     }
 }
-
-
-//#f6f6f6   blanco claro
-//#e8e8e8   blanco oscuro
-//#000      negro 
-//#0478ab   claro (azul)
-//#24566b   oscuro (azul)
