@@ -661,7 +661,7 @@ nav {
   }
   nav ul div {
     position: absolute;
-    top: calc(100% - 150px);
+    top: calc(100% - 180px);
     left: 40px;
     display: flex;
     flex-direction: column;
@@ -711,6 +711,12 @@ nav {
     border: 1px solid #24566b;
     border-radius: 15px;
     padding: 5px 8px;
+    display: flex;
+  }
+  nav ul div div a svg {
+    margin-left: 5px;
+    width: 18px;
+    height: 18px;
   }
   nav button {
     position: absolute;
