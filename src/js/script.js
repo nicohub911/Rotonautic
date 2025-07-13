@@ -8,8 +8,18 @@ let homeActualSlide = 0;
 const gallerySlider = document.getElementById("gallerySlider");
 const product_leftBtn = document.getElementById("product_leftBtn");
 const product_rightBtn = document.getElementById("product_rightBtn");
-let actualSlide = 0;
-//
+const gallerySlider_slide = document.querySelectorAll(".sliderRail__slide");
+let numOfSlide;
+if (gallerySlider) {
+    numOfSlide = parseInt(gallerySlider.dataset.step);
+    // set the width styles values for the product slider
+    gallerySlider.style.width = `${100 * numOfSlide}%`;
+    for (const slide of gallerySlider_slide) {
+        slide.style.width = `${100 / numOfSlide}%`;
+    }
+}
+let indexSlide = 0;
+// Auto-movement of "home" slider
 if (homeSlider) {
     setInterval(() => {
         switch (homeActualSlide) {
@@ -69,23 +79,25 @@ btnDropdownNav.addEventListener("click", () => {
     }
 });
 // function of the gallery kayaks slider (manage the slider movement)
-function productsMovementSlider(nSlides, direction) {
-    let slideStep = 100 / nSlides;
+function productsMovementSlider(direction) {
+    let step = 100 / numOfSlide;
 
-    if (direction === "L" && actualSlide !== 0) {
-        actualSlide = actualSlide + slideStep;
-        gallerySlider.style.transform = `translateX(${actualSlide}%)`;
-    } else if (direction === "R" && actualSlide !== (-100 + slideStep)) {
-        actualSlide = actualSlide - slideStep;
-        gallerySlider.style.transform = `translateX(${actualSlide}%)`;
+    if (direction == "L" && indexSlide != 0) {
+        indexSlide = indexSlide + step;
+        gallerySlider.style.transform = `translateX(${indexSlide}%)`;
+
+    } else if(direction == "R" && indexSlide != -100 + step){
+        indexSlide = indexSlide - step;
+        gallerySlider.style.transform = `translateX(${indexSlide}%)`;
+
     }
 }
 // listeners for the buttons of gallery kayaks.
 if (product_leftBtn && product_rightBtn) {
     product_leftBtn.addEventListener("click", () => {
-        productsMovementSlider(parseInt(product_leftBtn.dataset.kayak), "L");
+        productsMovementSlider("L");
     });
     product_rightBtn.addEventListener("click", () => {
-        productsMovementSlider(parseInt(product_rightBtn.dataset.kayak), "R");
+        productsMovementSlider("R");
     });   
 }

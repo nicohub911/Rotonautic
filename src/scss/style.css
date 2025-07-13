@@ -320,6 +320,7 @@ main .maps div {
 }
 .gallery .sliderContainer {
   width: 100%;
+  aspect-ratio: 15/9;
   overflow: hidden;
   position: relative;
   border-radius: 20px;
@@ -350,13 +351,13 @@ main .maps div {
 }
 .gallery .sliderContainer .sliderRail {
   display: flex;
-  width: 800%;
+  height: 100%;
+  min-width: 100%;
   transition: transform 0.3s;
   z-index: 500;
 }
 .gallery .sliderContainer .sliderRail div {
-  width: 12.5%;
-  aspect-ratio: 15/9;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
