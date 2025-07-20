@@ -306,7 +306,7 @@ main .maps div {
 .gallery {
   max-width: 1100px;
   padding: 0px calc(10px + 5vw);
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 1100px) {
   .gallery {
@@ -369,27 +369,6 @@ main .maps div {
 .gallery .sliderContainer .sliderRail div img {
   width: 100%;
   height: 100%;
-}
-.gallery .sliderContainer .sliderPages {
-  width: 100%;
-  height: 0px;
-  filter: drop-shadow(0px 0px 1px #000);
-  position: absolute;
-  top: calc(100% - 20px);
-  left: 0px;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-.gallery .sliderContainer .sliderPages span {
-  width: 15px;
-  height: 10px;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  transition: background 0.2s;
-}
-.gallery .sliderContainer .sliderPages span:first-child {
-  background-color: rgba(246, 246, 246, 0.9);
 }
 
 .productDescription {
@@ -630,14 +609,21 @@ nav {
     height: 100%;
     padding: 5px;
   }
+  nav .navR_close {
+    height: 0px;
+    opacity: 0;
+  }
+  nav .navR_open {
+    height: 100vh;
+    height: 100dvh;
+    opacity: 1;
+  }
   nav ul {
     background-color: #e8e8e8;
     position: absolute;
     top: 40px;
     left: 0px;
-    opacity: 0;
     width: 100%;
-    height: 0px;
     padding: 30px;
     list-style: none;
     display: flex;
@@ -744,7 +730,7 @@ footer {
   justify-content: flex-start;
   background-color: #e8e8e8;
   margin-top: 50px;
-  padding: 20px 5vw;
+  padding: 20px 5vw 80px 5vw;
   gap: 30px;
 }
 footer div {

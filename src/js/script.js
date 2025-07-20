@@ -56,6 +56,7 @@ if (homeSlider) {
     }, 4000);
 }
 // depend of the situation modified the type of nav
+/*
 if (window.innerWidth < 600) {
     navOptions.style.height = "0px";
     navOptions.style.opacity = "0";
@@ -68,14 +69,14 @@ window.addEventListener("resize", () => {
         navOptions.style.height = "auto";
         navOptions.style.opacity = "1";
     }
-});
+});*/
 btnDropdownNav.addEventListener("click", () => {
-    if (navOptions.style.height == "0px") {
-        navOptions.style.height = "calc(100vh - 40px)";
-        navOptions.style.opacity = "1";
+    if (navOptions.classList.contains("navR_close")) {
+        navOptions.classList.remove("navR_close");
+        navOptions.classList.add("navR_open");
     } else {
-        navOptions.style.height = "0px";
-        navOptions.style.opacity = "0";
+        navOptions.classList.add("navR_close");
+        navOptions.classList.remove("navR_open");
     }
 });
 // function of the gallery kayaks slider (manage the slider movement)

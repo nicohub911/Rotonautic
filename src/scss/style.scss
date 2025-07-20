@@ -186,14 +186,23 @@ nav {
             }
         }
 
+        .navR_close{
+            height: 0px;
+            opacity: 0;
+        }
+
+        .navR_open{
+            height: 100vh;
+            height: 100dvh;
+            opacity: 1;
+        }
+
         ul {
             background-color: #e8e8e8;
             position: absolute;
             top: 40px;
             left: 0px;
-            opacity: 0;
             width: 100%;
-            height: 0px;
             padding: 30px;
             list-style: none;
             display: flex;
@@ -308,7 +317,7 @@ footer {
     justify-content: flex-start;
     background-color: #e8e8e8;
     margin-top: 50px;
-    padding: 20px 5vw;
+    padding: 20px 5vw 80px 5vw;
     gap: 30px;
 
     div {
